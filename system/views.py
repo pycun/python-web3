@@ -8,7 +8,7 @@ from web3 import Web3
 # ======== Conectar a Ethereum ======= #
 '''
 from system.views import connect_to_web3, consult_wallet, consult_contract, create_local_connection, send_transaction, write_smart_contracts, write_smart_contracts, deploy_smart_contracts, inspect_block
-infura_url = "https://mainnet.infura.io/v3/9a4b03dcbc93487fa5be72288b8f3f59"
+infura_url = "https://mainnet.infura.io/v3/<your_infura_api_key>"
 web3_connection = connect_to_web3()
 '''
 
@@ -32,7 +32,7 @@ def connect_to_web3(infura_url):
 '''
 from system.views import connect_to_web3, consult_wallet
 
-infura_url = "https://mainnet.infura.io/v3/9a4b03dcbc93487fa5be72288b8f3f59"
+infura_url = "https://mainnet.infura.io/v3/<your_infura_api_key>"
 web3_connection = connect_to_web3(infura_url)
 
 wallet_address = "0x4182649f33709ccb4E0CdD679983fb6b945a615F"
@@ -61,7 +61,7 @@ def consult_contract():
     """
     Consulta los datos de un contrato en la red de Ethereum
     """
-    infura_url = "https://mainnet.infura.io/v3/9a4b03dcbc93487fa5be72288b8f3f59"
+    infura_url = "https://mainnet.infura.io/v3/<your_infura_api_key>"
     # Datos contratos Shiba Inu Token
     contract_address = "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE"
     abi = json.loads('[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"sender","type":"address"},{"name":"recipient","type":"address"},{"name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"addedValue","type":"uint256"}],"name":"increaseAllowance","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"value","type":"uint256"}],"name":"burn","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"account","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"subtractedValue","type":"uint256"}],"name":"decreaseAllowance","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"recipient","type":"address"},{"name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"owner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"name","type":"string"},{"name":"symbol","type":"string"},{"name":"decimals","type":"uint8"},{"name":"totalSupply","type":"uint256"},{"name":"feeReceiver","type":"address"},{"name":"tokenOwnerAddress","type":"address"}],"payable":true,"stateMutability":"payable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"}]')
@@ -209,7 +209,7 @@ def deploy_smart_contracts(message):
 
 
 def inspect_block():
-    infura_url = "https://mainnet.infura.io/v3/9a4b03dcbc93487fa5be72288b8f3f59"
+    infura_url = "https://mainnet.infura.io/v3/<your_infura_api_key>"
     web3_connection = connect_to_web3(infura_url=infura_url)
 
     print("Numero ultimo bloque en la blockchain: " + str(web3_connection.eth.blockNumber))
